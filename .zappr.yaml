@@ -1,0 +1,37 @@
+approvals:
+  # Check will succeed if there are 2 approvals at least
+  minimum: 2
+  # Do not count approval from PR opener
+  ignore: pr_opener
+  # Must start with thumbs up
+  pattern: "^(:\\+1:|👍)$"
+autobranch:
+  # How the branch name is generated
+  pattern: '{number}-{title}'
+  # Maximum length of the branch name
+  length: 55
+# Lets you verify that proper specification was provided along with a pull request.
+specification:
+  title:
+    # PR title is at least this many characters long
+    minimum-length:
+      enabled: true
+      length: 8
+  body:
+    # Either of these verifications has to be true
+    # PR body is at least this many characters long
+    minimum-length:
+      enabled: true
+      length: 8
+    contains-url: false
+    # Contains an issue number
+    contains-issue-number: true
+  template:
+    differs-from-body: true
+pull-request:
+  labels:
+    # PR cannot be merged without these labels
+    required:
+      - reviewed
+    # Allow additional labels to be present
+    additional: true
