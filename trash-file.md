@@ -1,0 +1,1 @@
+I really like some of processes automated by Zappr, especially find it very convenient to have branch auto-created for an open issue. so, anytime i pick up a task to work on, i just fetch repository, switch to the auto-created branch `git fetch; git checkout 1-feature-title`, and just do my stuff 😄
